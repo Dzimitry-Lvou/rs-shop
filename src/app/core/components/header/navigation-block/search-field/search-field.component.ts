@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+import { CategoryModel } from 'src/app/core/models/category.model';
+import { CategoryService } from 'src/app/core/services/category.service';
 
 @Component({
   selector: 'app-search-field',
@@ -10,6 +12,8 @@ import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 export class SearchFieldComponent implements OnInit {
   searchInput: FormControl = new FormControl(null);
 
+  constructor(private categoryService: CategoryService) {}
+
   ngOnInit() {
     this.searchInput.valueChanges
       .pipe(
@@ -17,6 +21,9 @@ export class SearchFieldComponent implements OnInit {
         debounceTime(1000),
         distinctUntilChanged(),
       )
-      .subscribe((v) => console.log(v));
+      .subscribe((v) => {
+        const searchedCats: CategoryModel[] = this.categoryService.searchCategory(v);
+        console.log(searchedCats);
+      });
   }
 }
