@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CategoryModel } from '../models/category.model';
+import { SubCategoryModel } from '../models/subcategory.model';
 
 const API_URL = 'http://localhost:3004';
 
@@ -29,6 +30,18 @@ export class CategoryService {
   }
 
   searchCategory(input: string): CategoryModel[] {
-    return this.categories.getValue().filter((v: CategoryModel) => v.name.includes(input));
+    return this.categories
+      .getValue()
+      .filter((v: CategoryModel) => v.name.toLowerCase().includes(input.toLowerCase()));
+  }
+
+  searchSubCategory(input: string): SubCategoryModel[] {
+    let subCategories: SubCategoryModel[] = this.categories
+      .getValue()
+      .flatMap((v) => v.subCategories);
+
+    return subCategories.filter((v: SubCategoryModel) =>
+      v.name.toLowerCase().includes(input.toLowerCase()),
+    );
   }
 }
