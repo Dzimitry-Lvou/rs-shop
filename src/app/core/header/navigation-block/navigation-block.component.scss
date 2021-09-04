@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navigation-row {
+  display: flex;
+}
+
+.categories-navigation {
+  display: flex;
+
+  & > p {
+    margin: 0 10px;
+  }
+}
