@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { InfoBlockComponent } from './header/info-block/info-block.component';
-import { NavigationBlockComponent } from './header/navigation-block/navigation-block.component';
-import { SearchFieldComponent } from './header/navigation-block/search-field/search-field.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { InfoBlockComponent } from './components/header/info-block/info-block.component';
+import { NavigationBlockComponent } from './components/header/navigation-block/navigation-block.component';
+import { SearchFieldComponent } from './components/header/navigation-block/search-field/search-field.component';
 
 @NgModule({
   declarations: [
