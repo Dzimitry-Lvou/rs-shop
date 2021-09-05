@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { InfoBlockComponent } from './components/header/info-block/info-block.component';
 import { NavigationBlockComponent } from './components/header/navigation-block/navigation-block.component';
 import { SearchFieldComponent } from './components/header/navigation-block/search-field/search-field.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { SearchFieldComponent } from './components/header/navigation-block/searc
     NavigationBlockComponent,
     SearchFieldComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, OverlayModule],
   exports: [HeaderComponent, FooterComponent],
 })
 export class CoreModule {}
