@@ -9,3 +9,11 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.btn,
+.mat-button-wrapper {
+  display: flex;
+  & > img {
+    margin: 0 5px;
+  }
+}
