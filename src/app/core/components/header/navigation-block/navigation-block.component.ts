@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { CategoryModel } from 'src/app/core/models/category.model';
 import { loadCategories } from 'src/app/redux/actions/card.actions';
 import { getCategories } from 'src/app/redux/selectors/selectors';
-import { StateModel } from 'src/app/redux/state.model';
 
 @Component({
   selector: 'app-navigation-block',
@@ -14,7 +13,7 @@ import { StateModel } from 'src/app/redux/state.model';
 export class NavigationBlockComponent {
   categories$: Observable<CategoryModel[]> = this.store.select(getCategories);
 
-  constructor(private store: Store<StateModel>) {
+  constructor(private store: Store) {
     store.dispatch(loadCategories());
   }
 }

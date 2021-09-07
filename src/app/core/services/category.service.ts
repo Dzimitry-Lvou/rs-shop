@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { loadCategories } from 'src/app/redux/actions/card.actions';
 import { getCategories } from 'src/app/redux/selectors/selectors';
 import { CategoryModel } from '../models/category.model';
 import { SubCategoryModel } from '../models/subcategory.model';
@@ -18,7 +17,6 @@ export class CategoryService {
   constructor(private http: HttpClient, private store: Store) {
     this.store.select(getCategories).subscribe((categories) => {
       this.categories = categories;
-      console.log('searchCategory', this.categories);
     });
   }
 
