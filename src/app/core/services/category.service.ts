@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { loadCategories } from 'src/app/redux/actions/card.actions';
+import { getCategories } from 'src/app/redux/selectors/selectors';
 import { CategoryModel } from '../models/category.model';
 import { SubCategoryModel } from '../models/subcategory.model';
 
@@ -11,34 +13,27 @@ const API_URL = 'http://localhost:3004';
   providedIn: 'root',
 })
 export class CategoryService {
-  private categories: BehaviorSubject<CategoryModel[]> = new BehaviorSubject<CategoryModel[]>([]);
+  private categories: CategoryModel[] = [];
 
-  categories$: Observable<CategoryModel[]> = this.categories.pipe(
-    map((items) => {
-      return items;
-    }),
-  );
-
-  constructor(private http: HttpClient) {
-    this.getCategories();
+  constructor(private http: HttpClient, private store: Store) {
+    this.store.select(getCategories).subscribe((categories) => {
+      this.categories = categories;
+      console.log('searchCategory', this.categories);
+    });
   }
 
-  getCategories() {
-    this.http
-      .get<CategoryModel[]>(`${API_URL}/categories`)
-      .subscribe((res) => this.categories.next(res));
+  getAll(): Observable<CategoryModel[]> {
+    return this.http.get<CategoryModel[]>(`${API_URL}/categories`);
   }
 
   searchCategory(input: string): CategoryModel[] {
-    return this.categories
-      .getValue()
-      .filter((v: CategoryModel) => v.name.toLowerCase().includes(input.toLowerCase()));
+    return this.categories.filter((v: CategoryModel) =>
+      v.name.toLowerCase().includes(input.toLowerCase()),
+    );
   }
 
   searchSubCategory(input: string): SubCategoryModel[] {
-    let subCategories: SubCategoryModel[] = this.categories
-      .getValue()
-      .flatMap((v) => v.subCategories);
+    let subCategories: SubCategoryModel[] = this.categories.flatMap((v) => v.subCategories);
 
     return subCategories.filter((v: SubCategoryModel) =>
       v.name.toLowerCase().includes(input.toLowerCase()),

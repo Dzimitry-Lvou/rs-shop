@@ -23,6 +23,6 @@
     </button>
   </div>
 </div>
-<nav class="categories-navigation" *ngFor="let item of categories">
+<nav class="categories-navigation" *ngFor="let item of categories$ | async">
   <a href="">{{item.name}}</a>
 </nav>

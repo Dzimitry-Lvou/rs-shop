@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { CategoryModel } from 'src/app/core/models/category.model';
-import { CategoryService } from 'src/app/core/services/category.service';
+import { loadCategories } from 'src/app/redux/actions/card.actions';
+import { getCategories } from 'src/app/redux/selectors/selectors';
+import { StateModel } from 'src/app/redux/state.model';
 
 @Component({
   selector: 'app-navigation-block',
@@ -8,11 +12,9 @@ import { CategoryService } from 'src/app/core/services/category.service';
   styleUrls: ['./navigation-block.component.scss'],
 })
 export class NavigationBlockComponent {
-  categories: CategoryModel[] = [];
+  categories$: Observable<CategoryModel[]> = this.store.select(getCategories);
 
-  constructor(private categoryService: CategoryService) {
-    this.categoryService.categories$.subscribe((value) => {
-      this.categories = value;
-    });
+  constructor(private store: Store<StateModel>) {
+    store.dispatch(loadCategories());
   }
 }
