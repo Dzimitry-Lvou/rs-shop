@@ -1,0 +1,9 @@
+.category-list {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  &__item {
+    margin: 0 10px;
+    height: 100%;
+  }
+}

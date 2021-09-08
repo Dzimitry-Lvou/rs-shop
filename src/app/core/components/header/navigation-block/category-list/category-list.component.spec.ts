@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavigationBlockComponent } from './navigation-block.component';
+import { CategoryListComponent } from './category-list.component';
 
-describe('NavigationBlockComponent', () => {
-  let component: NavigationBlockComponent;
-  let fixture: ComponentFixture<NavigationBlockComponent>;
+describe('CategoryListComponent', () => {
+  let component: CategoryListComponent;
+  let fixture: ComponentFixture<CategoryListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavigationBlockComponent],
+      declarations: [CategoryListComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavigationBlockComponent);
+    fixture = TestBed.createComponent(CategoryListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,6 @@
+<nav class="category-list">
+  <button mat-raised-button class="category-list__item btn" *ngFor="let item of categories$ | async"
+    routerLink="/category/{{item.id}}">
+    {{item.name}}
+  </button>
+</nav>
