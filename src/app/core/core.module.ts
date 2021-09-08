@@ -12,6 +12,9 @@ import { StoreModule } from '@ngrx/store';
 import { categoriesReducer } from '../redux/reducers/card.reducer';
 import { CategoryEffects } from '../redux/effects/category.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { CategoryListComponent } from './components/header/navigation-block/category-list/category-list.component';
+import { CoreRoutingModule } from './core-routing.module';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { EffectsModule } from '@ngrx/effects';
     InfoBlockComponent,
     NavigationBlockComponent,
     SearchFieldComponent,
+    CategoryListComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +34,7 @@ import { EffectsModule } from '@ngrx/effects';
     MatButtonModule,
     StoreModule.forFeature('categories', categoriesReducer),
     EffectsModule.forFeature([CategoryEffects]),
+    CoreRoutingModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })
