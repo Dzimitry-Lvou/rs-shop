@@ -18,7 +18,7 @@ const routes: Routes = [
     component: CategoryPageComponent,
   },
   {
-    path: 'product/:productId',
+    path: 'goods/:productId',
     component: ProductPageComponent,
   },
 ];

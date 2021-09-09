@@ -31,7 +31,11 @@ export class CategoryService {
   }
 
   searchSubCategory(input: string): SubCategoryModel[] {
-    let subCategories: SubCategoryModel[] = this.categories.flatMap((v) => v.subCategories);
+    let subCategories: SubCategoryModel[] = this.categories.flatMap((v) =>
+      v.subCategories.map((subCat) => {
+        return { ...subCat, mainCategoryId: v.id };
+      }),
+    );
 
     return subCategories.filter((v: SubCategoryModel) =>
       v.name.toLowerCase().includes(input.toLowerCase()),
