@@ -15,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CategoryListComponent } from './components/header/navigation-block/category-list/category-list.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { LogoComponent } from './components/header/navigation-block/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     SearchFieldComponent,
     CategoryListComponent,
     NotFoundPageComponent,
+    LogoComponent,
   ],
   imports: [
     CommonModule,
