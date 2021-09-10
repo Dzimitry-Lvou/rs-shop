@@ -41,4 +41,18 @@ export class CategoryService {
       v.name.toLowerCase().includes(input.toLowerCase()),
     );
   }
+
+  getCategoryById(categoryId: string): CategoryModel | undefined {
+    return this.categories.find((cat) => cat.id === categoryId);
+  }
+
+  getSubCategoryById(subCategoryId: string): SubCategoryModel | undefined {
+    let subCategories: SubCategoryModel[] = this.categories.flatMap((v) =>
+      v.subCategories.map((subCat) => {
+        return { ...subCat, mainCategoryId: v.id };
+      }),
+    );
+
+    return subCategories.find((subCat) => subCat.id === subCategoryId);
+  }
 }

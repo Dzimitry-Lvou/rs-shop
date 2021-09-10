@@ -1,0 +1,19 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  &__separator {
+    margin: 0 5px;
+  }
+
+  &__category-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__category {
+    &_link {
+      cursor: pointer;
+    }
+  }
+}

@@ -10,15 +10,7 @@ const API_URL = 'http://localhost:3004';
   providedIn: 'root',
 })
 export class GoodsService {
-  private goods: BehaviorSubject<GoodsModel[]> = new BehaviorSubject<GoodsModel[]>([]);
-
   private searchedGoods: BehaviorSubject<GoodsModel[]> = new BehaviorSubject<GoodsModel[]>([]);
-
-  goods$: Observable<GoodsModel[]> = this.goods.pipe(
-    map((items) => {
-      return items;
-    }),
-  );
 
   searchedGoods$: Observable<GoodsModel[]> = this.searchedGoods.pipe(
     map((items) => {
@@ -26,12 +18,18 @@ export class GoodsService {
     }),
   );
 
-  constructor(private http: HttpClient) {
-    this.getgoods();
+  constructor(private http: HttpClient) {}
+
+  getGoodsByCategory(category: string): Observable<GoodsModel[]> {
+    return this.http.get<GoodsModel[]>(`${API_URL}/goods/category/${category}`);
   }
 
-  getgoods() {
-    this.http.get<GoodsModel[]>(`${API_URL}/goods`).subscribe((res) => this.goods.next(res));
+  getGoodsBySubCategory(category: string, subCategory: string): Observable<GoodsModel[]> {
+    return this.http.get<GoodsModel[]>(`${API_URL}/goods/category/${category}/${subCategory}`);
+  }
+
+  getGoodsById(id: string): Observable<GoodsModel> {
+    return this.http.get<GoodsModel>(`${API_URL}/goods/item/${id}`);
   }
 
   searchGoods(input: string) {
