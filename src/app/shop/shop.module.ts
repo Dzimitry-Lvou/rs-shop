@@ -8,6 +8,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { GoodsCardComponent } from './components/goods-card/goods-card.component';
+import { SortingBlockComponent } from './components/sorting-block/sorting-block.component';
+import { SortPipe } from './pipes/sorting.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { GoodsCardComponent } from './components/goods-card/goods-card.component
     CategoryPageComponent,
     BreadcrumbsComponent,
     GoodsCardComponent,
+    SortingBlockComponent,
+    SortPipe,
   ],
   imports: [CommonModule, ShopRoutingModule, MatButtonModule, MatCardModule],
 })

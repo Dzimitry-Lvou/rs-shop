@@ -4,6 +4,8 @@ import { map } from 'rxjs/operators';
 import { GoodsModel } from 'src/app/core/models/goods.model';
 import { CategoryService } from 'src/app/core/services/category.service';
 import { GoodsService } from 'src/app/core/services/goods.service';
+import { SortSettingsModel } from '../../models/sort-settings.model';
+import { SortSettingsService } from '../../services/sort-settings.service';
 
 @Component({
   selector: 'app-category-page',
@@ -25,6 +27,7 @@ export class CategoryPageComponent implements OnInit {
     private route: ActivatedRoute,
     private goodsService: GoodsService,
     private categoryService: CategoryService,
+    private sortSettingsService: SortSettingsService,
   ) {
     this.route.params.subscribe((params) => {
       this.category$ = params.subCategoryId
@@ -62,5 +65,9 @@ export class CategoryPageComponent implements OnInit {
   onClick() {
     this.goodsAmount += 10;
     this.updateGoods();
+  }
+
+  getSettings(): SortSettingsModel {
+    return this.sortSettingsService.getSettings();
   }
 }
