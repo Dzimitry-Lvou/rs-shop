@@ -1,9 +1,7 @@
 <app-breadcrumbs></app-breadcrumbs>
 <h2>{{category$}}</h2>
-<div *ngFor='let product of goods$'>
-  <p>Product</p>
-  <p>{{product.name}}</p>
-  <p>{{product.description}}</p>
+<div class="cards-container">
+  <app-goods-card *ngFor='let product of goods$' [goodsItem]="product"></app-goods-card>
 </div>
 <p>Sorting block</p>
 <button class="btn" mat-raised-button *ngIf="!isMaxGoodsAmount" (click)="onClick()"> more </button>

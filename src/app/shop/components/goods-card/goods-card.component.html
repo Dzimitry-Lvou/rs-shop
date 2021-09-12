@@ -1,0 +1,12 @@
+<mat-card class="card">
+  <img class="card__img" mat-card-image [src]="goodsItem.imageUrls[0]" alt="Photo">
+  <mat-card-title>{{goodsItem.name}}</mat-card-title>
+  <mat-card-content>
+    <p>{{goodsItem.price}},00 р.</p>
+    <p>Рейтинг: {{goodsItem.rating}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button>В корзину</button>
+    <button mat-raised-button>В избранное</button>
+  </mat-card-actions>
+</mat-card>
