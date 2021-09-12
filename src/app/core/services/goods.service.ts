@@ -20,12 +20,14 @@ export class GoodsService {
 
   constructor(private http: HttpClient) {}
 
-  getGoodsByCategory(category: string): Observable<GoodsModel[]> {
-    return this.http.get<GoodsModel[]>(`${API_URL}/goods/category/${category}`);
-  }
-
-  getGoodsBySubCategory(category: string, subCategory: string): Observable<GoodsModel[]> {
-    return this.http.get<GoodsModel[]>(`${API_URL}/goods/category/${category}/${subCategory}`);
+  getGoodsByCategory(
+    category: string,
+    count: number = 10,
+    start: number = 0,
+  ): Observable<GoodsModel[]> {
+    return this.http.get<GoodsModel[]>(
+      `${API_URL}/goods/category/${category}?start=${start}&count=${count}`,
+    );
   }
 
   getGoodsById(id: string): Observable<GoodsModel> {

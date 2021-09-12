@@ -1,12 +1,9 @@
 <app-breadcrumbs></app-breadcrumbs>
 <h2>{{category$}}</h2>
-<ul>
-  <li>10 products by default, click more btn for 10 more</li>
-  <li>product</li>
-  <li>product</li>
-  <li>product</li>
-  <li>product</li>
-  <li>product</li>
-</ul>
+<div *ngFor='let product of goods$'>
+  <p>Product</p>
+  <p>{{product.name}}</p>
+  <p>{{product.description}}</p>
+</div>
 <p>Sorting block</p>
-<p>more btn</p>
+<button class="btn" mat-raised-button *ngIf="!isMaxGoodsAmount" (click)="onClick()"> more </button>
