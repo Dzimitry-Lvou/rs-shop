@@ -45,4 +45,8 @@ export class SearchFieldComponent implements OnInit {
         this.isMenuOpen = true;
       });
   }
+
+  clear() {
+    this.searchInput.setValue('');
+  }
 }

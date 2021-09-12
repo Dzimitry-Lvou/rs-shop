@@ -1,6 +1,6 @@
 <input type="text" class="input-field-text" [formControl]="searchInput" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
 <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isMenuOpen">
-  <div class="examples-list">
+  <div (click)="clear()" class="examples-list">
     <div class="example-list" *ngFor="let item of categories">
       <p routerLink="/category/{{item.id}}">{{item.name}}</p>
     </div>
