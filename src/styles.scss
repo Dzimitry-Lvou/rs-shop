@@ -10,10 +10,29 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 .btn,
 .mat-button-wrapper {
   display: flex;
+  align-items: center;
   & > img {
     margin: 0 5px;
   }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
 }

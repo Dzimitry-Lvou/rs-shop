@@ -16,6 +16,7 @@ import { CategoryListComponent } from './components/header/navigation-block/cate
 import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { LogoComponent } from './components/header/navigation-block/logo/logo.component';
+import { ContactsBlockComponent } from './components/header/info-block/contacts-block/contacts-block.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LogoComponent } from './components/header/navigation-block/logo/logo.co
     CategoryListComponent,
     NotFoundPageComponent,
     LogoComponent,
+    ContactsBlockComponent,
   ],
   imports: [
     CommonModule,
