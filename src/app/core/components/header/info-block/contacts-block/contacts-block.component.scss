@@ -36,19 +36,11 @@
   }
 
   &__list {
-    background-color: #fff;
-    border-radius: 5px;
-    border: solid 1px #8b8b8b;
-
-    & > li {
+    & > li > a {
       display: flex;
-      align-items: flex-start;
-      margin: 0 5px;
-      border-bottom: solid 1px #8b8b8b;
-    }
-
-    & > li:last-child {
-      border-bottom: none;
+      align-items: center;
+      justify-content: start;
+      margin: 0;
     }
   }
 
@@ -56,15 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px 10px;
     cursor: pointer;
     text-decoration: none;
+    margin: 0 10px;
   }
-}
-
-.arrow::after {
-  padding: 5px;
-  width: 20px;
-  height: 20px;
-  background-color: red;
 }

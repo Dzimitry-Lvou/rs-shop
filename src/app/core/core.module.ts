@@ -19,6 +19,7 @@ import { LogoComponent } from './components/header/navigation-block/logo/logo.co
 import { ContactsBlockComponent } from './components/header/info-block/contacts-block/contacts-block.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatIconModule } from '@angular/material/icon';
     CoreRoutingModule,
     MatInputModule,
     MatIconModule,
+    MatMenuModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

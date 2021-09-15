@@ -7,50 +7,50 @@
     <img class="icon" src="../../../../../../assets/icons/a1.svg" alt="">
     <span>+375 99 123 45 67</span>
   </a>
-  <button class="contacts__btn" [ngClass]="{active:isOpen}" mat-button (click)="isOpen = !isOpen"
-    (clickOutside)="isOpen = false" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  <button class="contacts__btn" [ngClass]="{active: isOpen}" mat-button [matMenuTriggerFor]="menu"
+    (click)="isOpen=true">
     <span>Еще</span>
     <div class="arrow"></div>
 
   </button>
-  <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+  <mat-menu #menu="matMenu" (close)="isOpen = false">
     <ul class="contacts__list">
       <li>
-        <a class="contacts__link" href="tel:+375001234567" target="_blank">
+        <a mat-menu-item class="contacts__link" href="tel:+375001234567" target="_blank">
           <img class="icon" src="../../../../../../assets/icons/life.svg" alt="">
           <span>+375 00 123 45 67</span>
         </a>
       </li>
       <li>
-        <a class="contacts__link" href="tel:+375123456789" target="_blank">
+        <a mat-menu-item class="contacts__link" href="tel:+375123456789" target="_blank">
           <img class="icon" src="../../../../../../assets/icons/telephone.svg" alt="">
           <span>+375 12 345 67 89</span>
         </a>
       </li>
       <li>
-        <a class="contacts__link" href="https://telegram.org/" target="_blank">
+        <a mat-menu-item class="contacts__link" href="https://telegram.org/" target="_blank">
           <img class="icon" src="../../../../../../assets/icons/telegram.svg" alt="">
           <span>Telegram</span>
         </a>
       </li>
       <li>
-        <a class="contacts__link" href="mailto:#" target="_blank">
+        <a mat-menu-item class="contacts__link" href="mailto:#" target="_blank">
           <img class="icon" src="../../../../../../assets/icons/mail.svg" alt="">
           <span>Почта</span>
         </a>
       </li>
       <li>
-        <a class="contacts__link" href="#" target="_blank">
+        <a mat-menu-item class="contacts__link" href="#" target="_blank">
           <img class="icon" src="../../../../../../assets/icons/call.svg" alt="">
           <span>Закажите звонок</span>
         </a>
       </li>
       <li>
-        <a class="contacts__link" href="#" target="_blank">
+        <a mat-menu-item class="contacts__link" href="#" target="_blank">
           <img class="icon" src="../../../../../../assets/icons/chat.svg" alt="">
           <span>Напишите нам</span>
         </a>
       </li>
     </ul>
-  </ng-template>
+  </mat-menu>
 </div>
