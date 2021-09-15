@@ -1,0 +1,30 @@
+.contacts {
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.socials {
+  &__list {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 30px;
+  }
+
+  &__link {
+    margin: 5px 10px;
+  }
+}
