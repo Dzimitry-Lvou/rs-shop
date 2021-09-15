@@ -20,6 +20,7 @@ import { ContactsBlockComponent } from './components/header/info-block/contacts-
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { UserToolsComponent } from './components/header/navigation-block/user-tools/user-tools.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MatMenuModule } from '@angular/material/menu';
     NotFoundPageComponent,
     LogoComponent,
     ContactsBlockComponent,
+    UserToolsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,23 @@
+<button mat-raised-button class="user-tools__btn btn" [ngClass]="{active: isOpen}" [matMenuTriggerFor]="menu"
+  (click)="isOpen=true">
+  <img src="../../../assets/icons/enter.svg" alt="">
+  <p>Аккаунт</p>
+</button>
+
+<mat-menu #menu="matMenu" (close)="isOpen = false">
+  <div class="user-tools__content">
+    <img src="../../../../../../assets/icons/default-user-icon.svg" alt="">
+    <p>Name</p>
+    <button mat-raised-button class="enter-btn btn">Войти</button>
+    <ul class="user-tools__list">
+      <li mat-menu-item class="user-tools__link">
+        <img class="icon" src="../../../../../../assets/icons/like.svg" alt="">
+        <p>Избранные товары</p>
+      </li>
+      <li mat-menu-item class="user-tools__link">
+        <div class="clock-icon icon"></div>
+        <p>Лист ожидания</p>
+      </li>
+    </ul>
+  </div>
+</mat-menu>
