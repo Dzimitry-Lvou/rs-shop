@@ -17,6 +17,8 @@ import { CoreRoutingModule } from './core-routing.module';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { LogoComponent } from './components/header/navigation-block/logo/logo.component';
 import { ContactsBlockComponent } from './components/header/info-block/contacts-block/contacts-block.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ContactsBlockComponent } from './components/header/info-block/contacts-
     StoreModule.forFeature('categories', categoriesReducer),
     EffectsModule.forFeature([CategoryEffects]),
     CoreRoutingModule,
+    MatInputModule,
+    MatIconModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

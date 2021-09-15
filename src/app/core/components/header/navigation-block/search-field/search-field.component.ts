@@ -16,6 +16,8 @@ import { GoodsService } from 'src/app/core/services/goods.service';
 export class SearchFieldComponent implements OnInit {
   searchInput: FormControl = new FormControl('');
 
+  isEmpty = this.searchInput.valueChanges.subscribe((v) => v);
+
   isMenuOpen = false;
 
   categories: CategoryModel[] = [];
