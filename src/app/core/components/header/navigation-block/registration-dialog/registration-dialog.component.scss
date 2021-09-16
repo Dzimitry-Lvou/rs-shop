@@ -1,0 +1,41 @@
+.dialog {
+  width: 450px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    width: 90%;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__back-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__btn {
+    margin: 10px;
+  }
+}

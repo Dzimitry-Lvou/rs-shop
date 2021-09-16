@@ -3,13 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
-  selector: 'app-user-tools',
-  templateUrl: './user-tools.component.html',
-  styleUrls: ['./user-tools.component.scss'],
+  selector: 'app-registration-dialog',
+  templateUrl: './registration-dialog.component.html',
+  styleUrls: ['./registration-dialog.component.scss'],
 })
-export class UserToolsComponent {
-  isOpen = false;
-
+export class RegistrationDialogComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {

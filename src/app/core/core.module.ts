@@ -21,6 +21,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { UserToolsComponent } from './components/header/navigation-block/user-tools/user-tools.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoginDialogComponent } from './components/header/navigation-block/login-dialog/login-dialog.component';
+import { RegistrationDialogComponent } from './components/header/navigation-block/registration-dialog/registration-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { UserToolsComponent } from './components/header/navigation-block/user-to
     LogoComponent,
     ContactsBlockComponent,
     UserToolsComponent,
+    LoginDialogComponent,
+    RegistrationDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +52,7 @@ import { UserToolsComponent } from './components/header/navigation-block/user-to
     MatInputModule,
     MatIconModule,
     MatMenuModule,
+    MatDialogModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })
