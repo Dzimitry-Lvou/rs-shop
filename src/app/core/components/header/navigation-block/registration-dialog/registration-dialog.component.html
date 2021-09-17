@@ -1,23 +1,23 @@
-<div class="dialog">
+<form class="dialog-form" [formGroup]="registryForm" (ngSubmit)="onSubmit()">
   <h2 mat-dialog-title>Регистрация</h2>
-  <div mat-dialog-content class="dialog__content">
-    <mat-form-field class="dialog__input" appearance="fill">
-      <mat-label>Электронная почта</mat-label>
-      <input type="email" matInput>
+  <div mat-dialog-content class="dialog-form__content">
+    <mat-form-field class="dialog-form__input" appearance="fill">
+      <mat-label>Логин</mat-label>
+      <input type="text" matInput formControlName="login">
     </mat-form-field>
-    <mat-form-field class="dialog__input" appearance="fill">
+    <mat-form-field class="dialog-form__input" appearance="fill">
       <mat-label>Пароль</mat-label>
-      <input type="password" matInput>
+      <input type="password" matInput formControlName="password">
     </mat-form-field>
   </div>
-  <div mat-dialog-actions class="dialog__actions">
-    <button mat-icon-button mat-dialog-close class="dialog__close-btn">
+  <div mat-dialog-actions class="dialog-form__actions">
+    <button mat-icon-button mat-dialog-close class="dialog-form__close-btn">
       <mat-icon aria-hidden="true">close</mat-icon>
     </button>
-    <button mat-button mat-dialog-close class="dialog__back-btn" (click)="openDialog()">
+    <button mat-button mat-dialog-close class="dialog-form__back-btn" (click)="openDialog()">
       <mat-icon aria-hidden="true">navigate_before</mat-icon> <span>назад</span>
     </button>
-    <button mat-stroked-button class="dialog__btn">Зарегистрироваться</button>
+    <button mat-stroked-button class="dialog-form__btn">Зарегистрироваться</button>
   </div>
 
-</div>
+</form>

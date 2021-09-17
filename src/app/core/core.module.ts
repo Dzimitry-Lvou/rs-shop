@@ -24,6 +24,7 @@ import { UserToolsComponent } from './components/header/navigation-block/user-to
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginDialogComponent } from './components/header/navigation-block/login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from './components/header/navigation-block/registration-dialog/registration-dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { RegistrationDialogComponent } from './components/header/navigation-bloc
     MatIconModule,
     MatMenuModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })
