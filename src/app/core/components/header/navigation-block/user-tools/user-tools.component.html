@@ -7,8 +7,9 @@
 <mat-menu #menu="matMenu" (close)="isOpen = false">
   <div class="user-tools__content">
     <img src="../../../../../../assets/icons/default-user-icon.svg" alt="">
-    <p>Name</p>
-    <button mat-raised-button class="enter-btn btn" (click)="openDialog()">Войти</button>
+    <p>{{fullName$}}</p>
+    <button mat-raised-button class="enter-btn btn" (click)="openDialog()" *ngIf="!isLogged$">Войти</button>
+    <button mat-raised-button class="enter-btn btn" (click)="logout()" *ngIf="isLogged$">Выйти</button>
     <ul class="user-tools__list">
       <li mat-menu-item class="user-tools__link">
         <img class="icon" src="../../../../../../assets/icons/like.svg" alt="">

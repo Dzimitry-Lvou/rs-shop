@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { Store } from '@ngrx/store';
+import { AuthService, USER_TOKEN_CONST_NAME } from 'src/app/core/services/auth.service';
+import { loginUser } from 'src/app/redux/actions/card.actions';
 import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
 
 @Component({
@@ -17,8 +19,9 @@ export class LoginDialogComponent {
   });
 
   constructor(
-    public dialog: MatDialog,
+    private store: Store,
     private authService: AuthService,
+    public dialog: MatDialog,
     private _snackBar: MatSnackBar,
   ) {}
 
@@ -30,8 +33,8 @@ export class LoginDialogComponent {
     const { login, password } = this.loginForm.value;
     this.authService.login(login, password).subscribe(
       ({ token }) => {
-        localStorage.setItem('dl-rs-shop-token', token);
-        console.log(localStorage.getItem('dl-rs-shop-token'));
+        localStorage.setItem(USER_TOKEN_CONST_NAME, token);
+        this.store.dispatch(loginUser());
         this.dialog.closeAll();
       },
       (e) => {

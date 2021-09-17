@@ -9,7 +9,6 @@ import { SearchFieldComponent } from './components/header/navigation-block/searc
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
-import { categoriesReducer } from '../redux/reducers/card.reducer';
 import { CategoryEffects } from '../redux/effects/category.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { CategoryListComponent } from './components/header/navigation-block/category-list/category-list.component';
@@ -25,6 +24,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginDialogComponent } from './components/header/navigation-block/login-dialog/login-dialog.component';
 import { RegistrationDialogComponent } from './components/header/navigation-block/registration-dialog/registration-dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { reducer } from '../redux/reducers/card.reducer';
+import { UpdateUserEffects } from '../redux/effects/user.effects';
+import { LogoutEffects } from '../redux/effects/logout.effects';
 
 @NgModule({
   declarations: [
@@ -47,8 +49,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     OverlayModule,
     MatButtonModule,
-    StoreModule.forFeature('categories', categoriesReducer),
-    EffectsModule.forFeature([CategoryEffects]),
+    StoreModule.forFeature('categories', reducer),
+    StoreModule.forFeature('user', reducer),
+    EffectsModule.forFeature([CategoryEffects, UpdateUserEffects, LogoutEffects]),
     CoreRoutingModule,
     MatInputModule,
     MatIconModule,
