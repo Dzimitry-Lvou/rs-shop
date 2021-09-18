@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { updateCategories, userLogoutSuccess, userUpdateSucces } from '../actions/card.actions';
+import { updateCategories, userLogoutSuccess, userUpdateSuccess } from '../actions/card.actions';
 import { StateModel } from '../state.model';
 
 export const initialState: StateModel = {
@@ -17,7 +17,7 @@ const mainReducer = createReducer(
     }),
   ),
   on(
-    userUpdateSucces,
+    userUpdateSuccess,
     (state, { user }): StateModel => ({
       ...state,
       user,

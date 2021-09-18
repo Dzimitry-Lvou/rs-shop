@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { loginUser, updateUser, userUpdateSucces } from '../actions/card.actions';
+import { UserService } from 'src/app/core/services/user.service';
+import { loginUser, updateUser, userUpdateSuccess } from '../actions/card.actions';
 
 @Injectable()
 export class UpdateUserEffects {
@@ -11,13 +11,13 @@ export class UpdateUserEffects {
     return this.actions$.pipe(
       ofType(updateUser, loginUser),
       mergeMap(() =>
-        this.authService.getUser().pipe(
-          map((user) => userUpdateSucces({ user })),
+        this.userService.getUser().pipe(
+          map((user) => userUpdateSuccess({ user })),
           catchError(() => EMPTY),
         ),
       ),
     );
   });
 
-  constructor(private actions$: Actions, private authService: AuthService) {}
+  constructor(private actions$: Actions, private userService: UserService) {}
 }

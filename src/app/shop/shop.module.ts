@@ -10,6 +10,12 @@ import { MatCardModule } from '@angular/material/card';
 import { GoodsCardComponent } from './components/goods-card/goods-card.component';
 import { SortingBlockComponent } from './components/sorting-block/sorting-block.component';
 import { SortPipe } from './pipes/sorting.pipe';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducer } from '../redux/reducers/card.reducer';
+import { UpdateUserEffects } from '../redux/effects/user.effects';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -21,6 +27,15 @@ import { SortPipe } from './pipes/sorting.pipe';
     SortingBlockComponent,
     SortPipe,
   ],
-  imports: [CommonModule, ShopRoutingModule, MatButtonModule, MatCardModule],
+  imports: [
+    CommonModule,
+    ShopRoutingModule,
+    MatButtonModule,
+    MatCardModule,
+    StoreModule.forFeature('user', reducer),
+    EffectsModule.forFeature([UpdateUserEffects]),
+    MatIconModule,
+    MatTooltipModule,
+  ],
 })
 export class ShopModule {}

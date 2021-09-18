@@ -11,7 +11,7 @@ export const updateCategories = createAction(
 export const loginUser = createAction('[Auth] login user');
 
 export const updateUser = createAction('[Auth] update user');
-export const userUpdateSucces = createAction(
+export const userUpdateSuccess = createAction(
   '[User API] user update success',
   props<{ user: UserModel }>(),
 );

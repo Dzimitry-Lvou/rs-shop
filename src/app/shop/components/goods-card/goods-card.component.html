@@ -4,9 +4,25 @@
   <mat-card-content>
     <p>{{goodsItem.price}},00 р.</p>
     <p>Рейтинг: {{goodsItem.rating}}</p>
+    <div class="card__status">
+    </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button>В корзину</button>
-    <button mat-raised-button>В избранное</button>
+    <button class="card__btn" mat-fab *ngIf="!isInCart$" (click)="addToCart()" color="primary"
+      matTooltip="Добавить в корзину">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <button class="card__btn" mat-fab *ngIf="isInCart$" (click)="removeFromCart()" color="accent"
+      matTooltip="Убрать из корзины">
+      <mat-icon>remove_shopping_cart</mat-icon>
+    </button>
+    <button class="card__btn" mat-fab *ngIf="!isFavorite$" (click)="addToFavorites()" color="primary"
+      matTooltip="Добавить в избранное">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button class="card__btn" mat-fab *ngIf="isFavorite$" (click)="removeFromFavorites()" color="accent"
+      matTooltip="Убрать из избранного">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>
