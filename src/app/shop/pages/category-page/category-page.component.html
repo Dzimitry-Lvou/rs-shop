@@ -1,7 +1,7 @@
 <app-breadcrumbs></app-breadcrumbs>
-<h2>{{category$}}</h2>
+<h2 class="category-page__title">{{category$}}</h2>
 <app-sorting-block></app-sorting-block>
 <div class="cards-container">
   <app-goods-card *ngFor='let product of goods$ | sort: getSettings()' [goodsItem]="product"></app-goods-card>
 </div>
-<button class="btn" mat-raised-button *ngIf="!isMaxGoodsAmount" (click)="onClick()"> more </button>
+<button class="more-btn btn" mat-raised-button *ngIf="!isMaxGoodsAmount" (click)="onClick()"> more </button>
