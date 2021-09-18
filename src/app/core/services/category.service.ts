@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { getCategories } from 'src/app/redux/selectors/selectors';
+import { selectCategories } from 'src/app/redux/selectors/selectors';
 import { CategoryModel } from '../models/category.model';
 import { SubCategoryModel } from '../models/subcategory.model';
 
@@ -15,7 +15,8 @@ export class CategoryService {
   private categories: CategoryModel[] = [];
 
   constructor(private http: HttpClient, private store: Store) {
-    this.store.select(getCategories).subscribe((categories) => {
+    // eslint-disable-next-line ngrx/no-store-subscription
+    this.store.select(selectCategories).subscribe((categories) => {
       this.categories = categories;
     });
   }

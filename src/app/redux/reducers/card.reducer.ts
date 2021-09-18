@@ -4,13 +4,7 @@ import { StateModel } from '../state.model';
 
 export const initialState: StateModel = {
   categories: [],
-  user: {
-    firstName: '',
-    lastName: '',
-    cart: [],
-    favorites: [],
-    orders: [],
-  },
+  user: null,
 };
 
 const mainReducer = createReducer(
@@ -33,7 +27,7 @@ const mainReducer = createReducer(
     userLogoutSuccess,
     (state): StateModel => ({
       ...state,
-      user: { ...initialState.user, firstName: ' ' },
+      user: null,
     }),
   ),
 );
