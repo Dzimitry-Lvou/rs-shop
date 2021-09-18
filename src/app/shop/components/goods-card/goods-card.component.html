@@ -1,6 +1,6 @@
 <mat-card class="card">
   <img class="card__img" mat-card-image [src]="goodsItem.imageUrls[0]" alt="Photo">
-  <mat-card-title>{{goodsItem.name}}</mat-card-title>
+  <mat-card-title class="card__title" routerLink="/goods/{{goodsItem.id}}">{{goodsItem.name}}</mat-card-title>
   <mat-card-content>
     <p>{{goodsItem.price}},00 р.</p>
     <p>Рейтинг: {{goodsItem.rating}}</p>

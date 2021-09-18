@@ -10,6 +10,13 @@
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.05);
 
+  &__title {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
   &__img {
     height: 300px;
     width: 200px;
