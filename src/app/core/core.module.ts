@@ -27,6 +27,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { reducer } from '../redux/reducers/card.reducer';
 import { UpdateUserEffects } from '../redux/effects/user.effects';
 import { LogoutEffects } from '../redux/effects/logout.effects';
+import { CartButtonComponent } from './components/header/navigation-block/cart-button/cart-button.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { LogoutEffects } from '../redux/effects/logout.effects';
     UserToolsComponent,
     LoginDialogComponent,
     RegistrationDialogComponent,
+    CartButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -58,6 +61,7 @@ import { LogoutEffects } from '../redux/effects/logout.effects';
     MatMenuModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatBadgeModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })
