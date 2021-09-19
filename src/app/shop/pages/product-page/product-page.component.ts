@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GoodsModel } from 'src/app/core/models/goods.model';
-import { CategoryService } from 'src/app/core/services/category.service';
+import { defaultItem, GoodsModel } from 'src/app/core/models/goods.model';
 import { GoodsService } from 'src/app/core/services/goods.service';
 
 @Component({
@@ -9,15 +8,13 @@ import { GoodsService } from 'src/app/core/services/goods.service';
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss'],
 })
-export class ProductPageComponent {
-  goodsItem$!: GoodsModel;
+export class ProductPageComponent implements OnInit {
+  goodsItem$: GoodsModel = defaultItem;
 
-  constructor(
-    private route: ActivatedRoute,
-    private goodsService: GoodsService,
-    private categoryService: CategoryService,
-  ) {
-    goodsService.getGoodsById(this.route.snapshot.params.productId).subscribe((v) => {
+  constructor(private route: ActivatedRoute, private goodsService: GoodsService) {}
+
+  ngOnInit() {
+    this.goodsService.getGoodsById(this.route.snapshot.params.productId).subscribe((v) => {
       this.goodsItem$ = v;
     });
   }

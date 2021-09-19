@@ -1,8 +1,10 @@
 <app-goods-breadcrumbs></app-goods-breadcrumbs>
 <h2 class="product-page__title">{{goodsItem$.name}}</h2>
+<div class="actions">
+  <app-cart-actions [goodsId]="goodsItem$.id"></app-cart-actions>
+  <app-favorites-actions [goodsId]="goodsItem$.id"></app-favorites-actions>
+</div>
 <p>Photos slider</p>
-<p>add to favourite btn</p>
-<p>add to cart btn</p>
-<p>state of favourite and cart btns changes in which list item is</p>
 <p>if its discount or popular product should be icon in top right corner</p>
-<p>under the photos - description</p>
+<h3 class="product-page__sub-title">Обзор</h3>
+<p class="product-page__product-desc">{{goodsItem$.description}}</p>
