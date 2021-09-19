@@ -17,6 +17,8 @@ import { UpdateUserEffects } from '../redux/effects/user.effects';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { GoodsBreadcrumbsComponent } from './components/goods-breadcrumbs/goods-breadcrumbs.component';
+import { CartActionsComponent } from './components/cart-actions/cart-actions.component';
+import { FavoritesActionsComponent } from './components/favorites-actions/favorites-actions.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { GoodsBreadcrumbsComponent } from './components/goods-breadcrumbs/goods-
     SortingBlockComponent,
     SortPipe,
     GoodsBreadcrumbsComponent,
+    CartActionsComponent,
+    FavoritesActionsComponent,
   ],
   imports: [
     CommonModule,

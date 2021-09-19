@@ -1,0 +1,6 @@
+<button mat-fab *ngIf="!isFavorite$" (click)="addToFavorites()" color="primary" matTooltip="Добавить в избранное">
+  <mat-icon>favorite</mat-icon>
+</button>
+<button mat-fab *ngIf="isFavorite$" (click)="removeFromFavorites()" color="accent" matTooltip="Убрать из избранного">
+  <mat-icon>favorite_border</mat-icon>
+</button>
