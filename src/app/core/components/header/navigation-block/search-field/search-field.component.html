@@ -7,15 +7,20 @@
   </button>
 </mat-form-field>
 <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isMenuOpen">
-  <div (click)="clear()" class="examples-list">
-    <div class="example-list" *ngFor="let item of categories">
-      <p routerLink="/category/{{item.id}}">{{item.name}}</p>
+  <div (click)="clear()" class="results-list">
+    <div class="results-item" *ngFor="let item of categories" routerLink="/category/{{item.id}}">
+      <p>{{item.name}}</p>
     </div>
-    <div class="example-list" *ngFor="let item of subCategories">
-      <p routerLink="/category/{{item.mainCategoryId}}/{{item.id}}">{{item.name}}</p>
+    <div class="results-item" *ngFor="let item of subCategories"
+      routerLink="/category/{{item.mainCategoryId}}/{{item.id}}">
+      <p>{{item.name}}</p>
     </div>
-    <div class="example-list" *ngFor="let item of goods">
-      <p routerLink="/goods/{{item.id}}">{{item.name}}</p>
+    <div class="results-item goods" *ngFor="let item of goods" routerLink="/goods/{{item.id}}">
+      <img class="goods__img" src={{item.imageUrls[0]}} alt="">
+      <div class="goods__info">
+        <p>{{item.name}}</p>
+        <p class="goods__price">{{item.price | currency:'BYN':'р.':'3.2-2'}}</p>
+      </div>
     </div>
   </div>
 </ng-template>
