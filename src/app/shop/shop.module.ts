@@ -16,6 +16,7 @@ import { reducer } from '../redux/reducers/card.reducer';
 import { UpdateUserEffects } from '../redux/effects/user.effects';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { GoodsBreadcrumbsComponent } from './components/goods-breadcrumbs/goods-breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     GoodsCardComponent,
     SortingBlockComponent,
     SortPipe,
+    GoodsBreadcrumbsComponent,
   ],
   imports: [
     CommonModule,

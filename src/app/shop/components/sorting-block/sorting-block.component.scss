@@ -1,5 +1,8 @@
 .sorting-block {
-  padding-left: 10%;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.87);
   & > span {
     margin-right: 10px;
   }

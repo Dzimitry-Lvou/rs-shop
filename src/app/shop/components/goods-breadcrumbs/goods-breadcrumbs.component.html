@@ -1,0 +1,9 @@
+<div class="breadcrumbs">
+  <p class="breadcrumbs__category_link" routerLink="/category/{{category$?.id}}">
+    {{category$?.name}}</p>
+  <div class="breadcrumbs__category-wrapper">
+    <span class="breadcrumbs__separator">&raquo;</span>
+    <p class="breadcrumbs__category_link" routerLink="/category/{{category$?.id}}/{{subCategory$?.id}}">
+      {{subCategory$?.name}}</p>
+  </div>
+</div>
