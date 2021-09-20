@@ -1,0 +1,14 @@
+<tr class="cart-item">
+  <td class="cart-item__info">
+    <img class="cart-item__img" [src]="goodsItem.imageUrls[0]" alt="">
+    <p>{{goodsItem.name}}</p>
+  </td>
+  <td class="cart-item__amount">
+    <button mat-stroked-button class="amount-btn" (click)="onSubtract()"> &ndash;</button>
+    <p>{{amount}}</p>
+    <button mat-stroked-button class="amount-btn" (click)="onAdd()">+</button>
+  </td>
+  <td class="cart-item__price">
+    <p>{{amount * goodsItem.price | currency:'BYN':'р.':'3.2-2'}}</p>
+  </td>
+</tr>

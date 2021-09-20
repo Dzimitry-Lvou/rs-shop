@@ -1,0 +1,6 @@
+<h2>Оформление заказа</h2>
+<h4>Список товаров</h4>
+<hr>
+<table>
+  <app-cart-item *ngFor="let item of items" [itemId]="item"></app-cart-item>
+</table>

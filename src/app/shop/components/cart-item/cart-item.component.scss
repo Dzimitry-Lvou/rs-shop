@@ -1,0 +1,46 @@
+.cart-item {
+  height: 80px;
+  display: flex;
+
+  & > td {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info {
+    width: 50%;
+  }
+
+  &__amount {
+    height: 50px;
+    width: 30%;
+
+    & > p {
+      font-size: 40px;
+      margin: 0 15px;
+    }
+
+    & > .amount-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 50px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__price {
+    width: 60px;
+  }
+
+  &__img {
+    height: 60px;
+    width: 40px;
+    object-fit: cover;
+    margin: 0 auto 20px;
+  }
+}

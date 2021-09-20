@@ -19,6 +19,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { GoodsBreadcrumbsComponent } from './components/goods-breadcrumbs/goods-breadcrumbs.component';
 import { CartActionsComponent } from './components/cart-actions/cart-actions.component';
 import { FavoritesActionsComponent } from './components/favorites-actions/favorites-actions.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { FavoritesActionsComponent } from './components/favorites-actions/favori
     GoodsBreadcrumbsComponent,
     CartActionsComponent,
     FavoritesActionsComponent,
+    CartPageComponent,
+    CartItemComponent,
   ],
   imports: [
     CommonModule,
