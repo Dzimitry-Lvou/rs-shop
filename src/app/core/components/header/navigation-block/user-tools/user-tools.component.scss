@@ -1,6 +1,7 @@
 .user-tools {
   &__btn {
     display: flex;
+    margin: 25px 15px;
     &::after {
       content: '';
       margin-left: 3px;

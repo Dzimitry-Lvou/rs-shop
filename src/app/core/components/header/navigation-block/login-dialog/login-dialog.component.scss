@@ -1,5 +1,6 @@
 .dialog-form {
-  width: 450px;
+  max-width: 450px;
+  min-width: 350px;
   height: 350px;
   display: flex;
   flex-direction: column;

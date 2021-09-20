@@ -8,7 +8,8 @@
 .navigation-row {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 10px;
 
   & > div {
@@ -21,5 +22,11 @@
 
   & > p {
     margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .navigation-row {
+    width: 500px;
   }
 }

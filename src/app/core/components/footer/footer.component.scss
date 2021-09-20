@@ -21,6 +21,9 @@
     cursor: pointer;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.87);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

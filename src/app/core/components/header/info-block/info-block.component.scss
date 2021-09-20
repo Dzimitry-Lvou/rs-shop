@@ -28,3 +28,9 @@
     color: #909399;
   }
 }
+
+@media screen and (max-width: 690px) {
+  :host {
+    display: none;
+  }
+}

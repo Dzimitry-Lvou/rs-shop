@@ -44,5 +44,8 @@
     text-decoration: none;
     margin: 0 10px;
     color: rgba(0, 0, 0, 0.87);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

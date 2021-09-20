@@ -2,8 +2,9 @@
   margin: 15px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   &__item {
-    margin: 0 10px;
+    margin: 5px 10px;
     height: 100%;
   }
 }
