@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__arrow-btn {
+    width: 30px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .slider {
+    &__content {
+      flex-direction: row;
+    }
+
+    &__row {
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 740px) {
+  .slider {
+    &__content {
+      flex-wrap: wrap;
+    }
+  }
+}

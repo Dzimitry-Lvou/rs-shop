@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { GoodsModel } from '../models/goods.model';
 
 const API_URL = 'http://localhost:3004';
@@ -38,5 +38,12 @@ export class GoodsService {
     this.http
       .get<GoodsModel[]>(`${API_URL}/goods/search?text=${input}`)
       .subscribe((res) => this.searchedGoods.next(res));
+  }
+
+  getPopularByCategory(category: string): Observable<GoodsModel[]> {
+    return this.http.get<GoodsModel[]>(`${API_URL}/goods/category/${category}`).pipe(
+      map((items: GoodsModel[]) => items.filter((item) => item.rating === 5)),
+      tap((v) => console.log(v)),
+    );
   }
 }
