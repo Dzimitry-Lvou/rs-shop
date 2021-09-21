@@ -23,6 +23,7 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { PopularsSliderComponent } from './components/populars-slider/populars-slider.component';
 import { PopularsItemComponent } from './components/populars-item/populars-item.component';
+import { DiscountsCarouselComponent } from './components/discounts-carousel/discounts-carousel.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PopularsItemComponent } from './components/populars-item/populars-item.
     CartItemComponent,
     PopularsSliderComponent,
     PopularsItemComponent,
+    DiscountsCarouselComponent,
   ],
   imports: [
     CommonModule,

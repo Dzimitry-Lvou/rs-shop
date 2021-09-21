@@ -1,0 +1,26 @@
+<div class="carousel">
+  <ul class="carousel__list">
+    <li class="carousel__element" [ngClass]="{active: activeSlide === 1}" routerLink="/goods/612e05c5bc038caf8f07d5d3">
+      <img src="../../../../assets/images/discounts/iphone-12.jpg" alt="">
+    </li>
+    <li class="carousel__element" [ngClass]="{active: activeSlide === 2}" routerLink="/goods/612e8c383ce06c61f154c6bc">
+      <img src="../../../../assets/images/discounts/pocketbook616.jpg" alt="">
+    </li>
+    <li class="carousel__element" [ngClass]="{active: activeSlide === 3}" routerLink="/goods/612fe4ecbe8833c5e72318e6">
+      <img src="../../../../assets/images/discounts/macbook-pro13.jpg" alt="">
+    </li>
+    <li class="carousel__element" [ngClass]="{active: activeSlide === 4}" routerLink="/goods/612e05c53a4458874142f298">
+      <img src="../../../../assets/images/discounts/xiaomi-redmi-9.jpg" alt="">
+    </li>
+    <li class="carousel__element" [ngClass]="{active: activeSlide === 5}" routerLink="/goods/612e09de44cffa913e8ca3ba">
+      <img src="../../../../assets/images/discounts/apple-watch.jpg" alt="">
+    </li>
+  </ul>
+  <div class="carousel__dots">
+    <div class="carousel__dot" [ngClass]="{active: activeSlide === 1}" (click)="activeSlide = 1"></div>
+    <div class="carousel__dot" [ngClass]="{active: activeSlide === 2}" (click)="activeSlide = 2"></div>
+    <div class="carousel__dot" [ngClass]="{active: activeSlide === 3}" (click)="activeSlide = 3"></div>
+    <div class="carousel__dot" [ngClass]="{active: activeSlide === 4}" (click)="activeSlide = 4"></div>
+    <div class="carousel__dot" [ngClass]="{active: activeSlide === 5}" (click)="activeSlide = 5"></div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__element {
+    width: 780px;
+    height: 520px;
+    cursor: pointer;
+    display: none;
+    & > img {
+      width: 780px;
+      height: 520px;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    &.active {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .carousel__element {
+    width: 480px;
+    height: 320px;
+    & > img {
+      width: 480px;
+      height: 320px;
+    }
+  }
+}
