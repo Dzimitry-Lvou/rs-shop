@@ -25,6 +25,7 @@ import { PopularsSliderComponent } from './components/populars-slider/populars-s
 import { PopularsItemComponent } from './components/populars-item/populars-item.component';
 import { DiscountsCarouselComponent } from './components/discounts-carousel/discounts-carousel.component';
 import { GoodAmountStatusComponent } from './components/good-amount-status/good-amount-status.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { GoodAmountStatusComponent } from './components/good-amount-status/good-
     EffectsModule.forFeature([UpdateUserEffects]),
     MatIconModule,
     MatTooltipModule,
+    MatTabsModule,
   ],
 })
 export class ShopModule {}

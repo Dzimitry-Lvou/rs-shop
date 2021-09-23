@@ -1,10 +1,17 @@
 <app-goods-breadcrumbs></app-goods-breadcrumbs>
 <h2 class="product-page__title">{{goodsItem$.name}}</h2>
+<mat-tab-group animationDuration="500ms">
+  <mat-tab class="tabs" *ngFor="let imgUrl of goodsItem$.imageUrls">
+    <ng-template mat-tab-label><img class="tabs__label-img" [src]="imgUrl" alt=""></ng-template>
+    <div class="tabs__content">
+      <img class="tabs__img" [src]="imgUrl" alt="">
+      <mat-icon class="thumb-up-icon" color="warn" *ngIf="goodsItem$.rating === 5">thumb_up</mat-icon>
+    </div>
+  </mat-tab>
+</mat-tab-group>
 <div class="actions">
   <app-cart-actions [goodsId]="goodsItem$.id"></app-cart-actions>
   <app-favorites-actions [goodsId]="goodsItem$.id"></app-favorites-actions>
 </div>
-<p>Photos slider</p>
-<p>if its discount or popular product should be icon in top right corner</p>
 <h3 class="product-page__sub-title">Обзор</h3>
 <p class="product-page__product-desc">{{goodsItem$.description}}</p>
