@@ -1,0 +1,26 @@
+<button mat-raised-button class="btn" class="catalog__btn btn" [ngClass]="{active: isOpen}" cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin" (click)="isOpen=!isOpen">
+  <mat-icon class="icon" *ngIf="!isOpen">view_list</mat-icon>
+  <mat-icon class="icon" *ngIf="isOpen">close</mat-icon>
+  <p>Каталог товаров</p>
+</button>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen"
+  cdkConnectedOverlayBackdropClass="backdrop" cdkConnectedOverlayHasBackdrop (backdropClick)="isOpen = false">
+  <div class="categories-panel">
+    <div class="categories-panel__main-categories">
+      <div mat-menu-item class="categories-panel__main-category" *ngFor="let category of categories"
+        [ngClass]="{active: activeCategory.id === category.id}" (mouseenter)="activeCategory = category"
+        routerLink="/category/{{category.id}}" (click)="isOpen = false">
+        <p>{{category.name}}</p>
+      </div>
+    </div>
+    <div class="categories-panel__sub-categories" *ngIf="activeCategory">
+      <div mat-menu-item class="categories-panel__sub-category" *ngFor="let subcategory of activeCategory.subCategories"
+        routerLink="/category/{{activeCategory.id}}/{{subcategory.id}}" (click)="isOpen = false">
+        <p>{{subcategory.name}}</p>
+      </div>
+    </div>
+  </div>
+
+</ng-template>

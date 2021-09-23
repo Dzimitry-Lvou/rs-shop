@@ -29,6 +29,7 @@ import { UpdateUserEffects } from '../redux/effects/user.effects';
 import { LogoutEffects } from '../redux/effects/logout.effects';
 import { CartButtonComponent } from './components/header/navigation-block/cart-button/cart-button.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { CatagoriesPanelComponent } from './components/header/navigation-block/catagories-panel/catagories-panel.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     LoginDialogComponent,
     RegistrationDialogComponent,
     CartButtonComponent,
+    CatagoriesPanelComponent,
   ],
   imports: [
     CommonModule,
