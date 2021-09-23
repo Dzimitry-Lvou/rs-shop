@@ -1,0 +1,19 @@
+.amount-status {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  color: grey;
+  &__icon {
+    &.red {
+      color: red;
+    }
+
+    &.yellow {
+      color: rgb(226, 226, 42);
+    }
+
+    &.green {
+      color: green;
+    }
+  }
+}

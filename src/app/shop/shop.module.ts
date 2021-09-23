@@ -24,6 +24,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { PopularsSliderComponent } from './components/populars-slider/populars-slider.component';
 import { PopularsItemComponent } from './components/populars-item/populars-item.component';
 import { DiscountsCarouselComponent } from './components/discounts-carousel/discounts-carousel.component';
+import { GoodAmountStatusComponent } from './components/good-amount-status/good-amount-status.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DiscountsCarouselComponent } from './components/discounts-carousel/disc
     PopularsSliderComponent,
     PopularsItemComponent,
     DiscountsCarouselComponent,
+    GoodAmountStatusComponent,
   ],
   imports: [
     CommonModule,

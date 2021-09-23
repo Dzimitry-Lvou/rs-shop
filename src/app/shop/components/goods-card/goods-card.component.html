@@ -1,10 +1,12 @@
 <mat-card class="card">
   <img class="card__img" mat-card-image [src]="goodsItem.imageUrls[0]" alt="Photo">
   <mat-card-title class="card__title" routerLink="/goods/{{goodsItem.id}}">{{goodsItem.name}}</mat-card-title>
-  <mat-card-content>
-    <p>{{goodsItem.price | currency:'BYN':'р.':'3.2-2'}}</p>
-    <p>Рейтинг: {{goodsItem.rating}}</p>
+  <mat-card-content class="card__content">
+    <app-good-amount-status [amount]="goodsItem.availableAmount"></app-good-amount-status>
+    <p class="card__price">{{goodsItem.price | currency:'BYN':'р.':'3.2-2'}}</p>
+    <p class="card__rating">Рейтинг: {{goodsItem.rating}}</p>
     <div class="card__status">
+      <mat-icon class="thumb-up-icon" color="warn" *ngIf="goodsItem.rating === 5">thumb_up</mat-icon>
     </div>
   </mat-card-content>
   <mat-card-actions>
