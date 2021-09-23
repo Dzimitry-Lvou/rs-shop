@@ -4,4 +4,4 @@
 <div class="cards-container">
   <app-goods-card *ngFor='let product of goods$ | sort: getSettings()' [goodsItem]="product"></app-goods-card>
 </div>
-<button class="more-btn btn" mat-raised-button *ngIf="!isMaxGoodsAmount" (click)="onClick()"> more </button>
+<button class="more-btn btn" mat-raised-button *ngIf="!isMaxGoodsAmount" (click)="onClick()"> Показать больше </button>
