@@ -11,8 +11,8 @@
 
   &__img {
     height: 60px;
-    width: 40px;
-    object-fit: cover;
+    max-width: 60px;
+    object-fit: contain;
     margin: 20px;
   }
 

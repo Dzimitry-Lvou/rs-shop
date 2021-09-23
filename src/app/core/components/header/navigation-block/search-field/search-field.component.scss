@@ -27,8 +27,8 @@
 
   &__img {
     height: 50px;
-    width: 32px;
-    object-fit: cover;
+    max-width: 32px;
+    object-fit: contain;
     margin-right: 15px;
   }
 
