@@ -1,0 +1,10 @@
+:host {
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}

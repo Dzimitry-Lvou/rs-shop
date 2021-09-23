@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartPageComponent,
+  },
+  {
+    path: 'favorites',
+    component: FavoritesPageComponent,
   },
 ];
 

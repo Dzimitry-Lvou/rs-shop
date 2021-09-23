@@ -11,7 +11,7 @@
     <button mat-raised-button class="enter-btn btn" (click)="openDialog()" *ngIf="!isLogged$">Войти</button>
     <button mat-raised-button class="enter-btn btn" (click)="logout()" *ngIf="isLogged$">Выйти</button>
     <ul class="user-tools__list">
-      <li mat-menu-item class="user-tools__link">
+      <li mat-menu-item class="user-tools__link" routerLink="/favorites">
         <img class="icon" src="../../../../../../assets/icons/like.svg" alt="">
         <p>Избранные товары</p>
       </li>

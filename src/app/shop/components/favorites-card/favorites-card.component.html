@@ -1,0 +1,12 @@
+<mat-card class="favorites-card">
+  <img class="favorites-card__img" [src]="goodsItem.imageUrls[0]" alt="">
+  <div class="favorites-card__content">
+    <h3 class="favorites-card__title" routerLink="/goods/{{goodsItem.id}}">{{goodsItem.name}}</h3>
+    <p class="favorites-card__rating">Рейтинг: {{goodsItem.rating}}</p>
+    <p class="favorites-card__price">{{goodsItem.price | currency:'BYN':'р.':'3.2-2'}}</p>
+    <mat-card-actions>
+      <app-cart-actions [goodsId]="goodsItem.id"></app-cart-actions>
+      <app-favorites-actions [goodsId]="goodsItem.id"></app-favorites-actions>
+    </mat-card-actions>
+  </div>
+</mat-card>

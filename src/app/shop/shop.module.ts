@@ -26,6 +26,8 @@ import { PopularsItemComponent } from './components/populars-item/populars-item.
 import { DiscountsCarouselComponent } from './components/discounts-carousel/discounts-carousel.component';
 import { GoodAmountStatusComponent } from './components/good-amount-status/good-amount-status.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
+import { FavoritesCardComponent } from './components/favorites-card/favorites-card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     PopularsItemComponent,
     DiscountsCarouselComponent,
     GoodAmountStatusComponent,
+    FavoritesPageComponent,
+    FavoritesCardComponent,
   ],
   imports: [
     CommonModule,
