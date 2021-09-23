@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserService } from 'src/app/core/services/user.service';
+import { updateUser } from 'src/app/redux/actions/card.actions';
 import { selectUser } from 'src/app/redux/selectors/selectors';
 
 @Component({
@@ -21,6 +22,7 @@ export class CartActionsComponent implements OnInit {
     this.user$.subscribe((user) => {
       this.isInCart$ = user?.cart.includes(this.goodsId);
     });
+    this.store.dispatch(updateUser());
   }
 
   addToCart() {
