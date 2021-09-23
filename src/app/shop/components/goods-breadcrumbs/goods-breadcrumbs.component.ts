@@ -29,7 +29,6 @@ export class GoodsBreadcrumbsComponent implements OnInit {
         this.category$ = this.categoryService.getCategoryById(v.category);
 
         this.subCategory$ = this.categoryService.getSubCategoryById(v.subCategory);
-        console.log(v, this.category$, this.subCategory$);
       });
   }
 }

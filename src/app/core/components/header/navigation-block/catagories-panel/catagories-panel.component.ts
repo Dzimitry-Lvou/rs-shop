@@ -21,7 +21,6 @@ export class CatagoriesPanelComponent implements OnInit {
     this.store.select(selectCategories).subscribe((cats) => {
       this.categories = cats;
       this.activeCategory = this.categories[0];
-      console.log(cats);
     });
   }
 }
