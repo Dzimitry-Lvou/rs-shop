@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
 import { AuthService, USER_TOKEN_CONST_NAME } from 'src/app/core/services/auth.service';
+import { SnackBarService } from 'src/app/core/services/snackbar.service';
 import { loginUser } from 'src/app/redux/actions/card.actions';
 import { RegistrationDialogComponent } from '../registration-dialog/registration-dialog.component';
 
@@ -22,7 +22,7 @@ export class LoginDialogComponent {
     private store: Store,
     private authService: AuthService,
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar,
+    private snackBarService: SnackBarService,
   ) {}
 
   openDialog() {
@@ -39,19 +39,11 @@ export class LoginDialogComponent {
       },
       (e) => {
         if (e.status === 401) {
-          this.openSnackBar('Пользователь с такими логином и пароллем не найден');
+          this.snackBarService.openSnackBar('Пользователь с такими логином и пароллем не найден');
         } else {
-          this.openSnackBar(e.message);
+          this.snackBarService.openSnackBar(e.message);
         }
       },
     );
-  }
-
-  openSnackBar(message: string) {
-    this._snackBar.open(message, '', {
-      duration: 3000,
-      verticalPosition: 'top',
-      horizontalPosition: 'end',
-    });
   }
 }

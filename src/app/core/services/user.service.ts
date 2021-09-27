@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { updateUser } from 'src/app/redux/actions/card.actions';
 import { UserModel } from '../models/user.model';
 import { USER_TOKEN_CONST_NAME } from './auth.service';
+import { SnackBarService } from './snackbar.service';
 
 const API_URL = 'http://localhost:3004';
 
@@ -12,7 +13,11 @@ const API_URL = 'http://localhost:3004';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient, private store: Store) {}
+  constructor(
+    private http: HttpClient,
+    private store: Store,
+    private snackBarService: SnackBarService,
+  ) {}
 
   getUser(): Observable<UserModel> {
     const token = localStorage.getItem(USER_TOKEN_CONST_NAME);
@@ -38,9 +43,20 @@ export class UserService {
         },
         responseType: 'text',
       })
-      .subscribe(() => {
-        this.store.dispatch(updateUser());
-      });
+      .subscribe(
+        () => {
+          this.store.dispatch(updateUser());
+        },
+        (e) => {
+          if (e.status === 401) {
+            this.snackBarService.openSnackBar(
+              'Чтобы иметь возможность довалять товар в корзину, залогиньтесь',
+            );
+          } else {
+            this.snackBarService.openSnackBar(e.message);
+          }
+        },
+      );
   }
 
   removeFromCart(goodsId: string): void {
@@ -69,9 +85,20 @@ export class UserService {
         },
         responseType: 'text',
       })
-      .subscribe(() => {
-        this.store.dispatch(updateUser());
-      });
+      .subscribe(
+        () => {
+          this.store.dispatch(updateUser());
+        },
+        (e) => {
+          if (e.status === 401) {
+            this.snackBarService.openSnackBar(
+              'Чтобы иметь возможность довалять товар в избранное, залогиньтесь',
+            );
+          } else {
+            this.snackBarService.openSnackBar(e.message);
+          }
+        },
+      );
   }
 
   removeFromFavorites(goodsId: string): void {
