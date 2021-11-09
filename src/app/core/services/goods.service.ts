@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { GoodsModel } from '../models/goods.model';
-
-const API_URL = 'http://localhost:3004';
+import { API_URL } from './apiUrl';
 
 @Injectable({
   providedIn: 'root',

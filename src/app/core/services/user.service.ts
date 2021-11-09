@@ -4,10 +4,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { updateUser } from 'src/app/redux/actions/card.actions';
 import { UserModel } from '../models/user.model';
+import { API_URL } from './apiUrl';
 import { USER_TOKEN_CONST_NAME } from './auth.service';
 import { SnackBarService } from './snackbar.service';
-
-const API_URL = 'http://localhost:3004';
 
 @Injectable({
   providedIn: 'root',

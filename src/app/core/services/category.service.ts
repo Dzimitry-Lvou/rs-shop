@@ -5,8 +5,7 @@ import { Observable } from 'rxjs';
 import { selectCategories } from 'src/app/redux/selectors/selectors';
 import { CategoryModel } from '../models/category.model';
 import { SubCategoryModel } from '../models/subcategory.model';
-
-const API_URL = 'http://localhost:3004';
+import { API_URL } from './apiUrl';
 
 @Injectable({
   providedIn: 'root',
