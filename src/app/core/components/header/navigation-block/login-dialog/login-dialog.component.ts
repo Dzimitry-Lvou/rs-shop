@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { RegistrationDialogComponent } from '../registration-dialog/registration
   templateUrl: './login-dialog.component.html',
   styleUrls: ['./login-dialog.component.scss'],
 })
-export class LoginDialogComponent {
+export class LoginDialogComponent implements OnInit {
   loginForm = new FormGroup({
     login: new FormControl(''),
     password: new FormControl(''),
@@ -24,6 +24,10 @@ export class LoginDialogComponent {
     public dialog: MatDialog,
     private snackBarService: SnackBarService,
   ) {}
+
+  ngOnInit() {
+    this.snackBarService.openSnackBar(`login: Warner, password: ea`, 10000);
+  }
 
   openDialog() {
     this.dialog.open(RegistrationDialogComponent);
